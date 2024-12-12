@@ -1,2 +1,2 @@
-# Cardsea.github.io
-idk new site or smthunig
+# hello! welcome to my goofy ahh github website 
+i made this cuz im bored :D
