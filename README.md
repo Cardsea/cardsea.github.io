@@ -2,3 +2,4 @@
 i made this cuz im bored 😃
 also becase i have a google sites thing too and google sites succkkkkkkk so i found a way to have free domain :3
 i hope i can learn how to use this better lol bye bye
+* whats this do
