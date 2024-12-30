@@ -1,5 +1,6 @@
 const board = document.getElementById('board');
 const statusDisplay = document.getElementById('status');
+const playAgainButton = document.getElementById('play-again');
 let boardState = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let gameActive = true;
@@ -55,7 +56,7 @@ function botMove() {
     let randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
     boardState[randomIndex] = currentPlayer;
     document.querySelector(`.cell[data-index="${randomIndex}"]`).textContent = currentPlayer;
-    
+
     if (checkWin()) {
         statusDisplay.textContent = `Player ${currentPlayer} wins!`;
         gameActive = false;
@@ -71,4 +72,13 @@ function botMove() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
 }
 
+function resetGame() {
+    boardState = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    gameActive = true;
+    statusDisplay.textContent = "";
+    document.querySelectorAll('.cell').forEach(cell => cell.textContent = "");
+}
+
 board.addEventListener('click', handleCellClick);
+playAgainButton.addEventListener('click', resetGame);
