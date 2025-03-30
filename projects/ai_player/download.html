@@ -4,92 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Instructions - AI Player</title>
-    <link rel="stylesheet" href="../../Resources/styles.css">
-    <script src="../../Resources/script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="../../index.html">Home</a>
-            <a href="../index.html">Projects</a>
-            <a href="index.html">AI Player</a>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 shadow-md p-4">
+        <nav class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <ol class="flex space-x-2">
+                <li><a href="../../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">AI Player</a></li>
+                <li class="text-gray-400">/</li>
+                <li>Download</li>
+            </ol>
         </nav>
+        <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">Download Instructions</h1>
+        <p class="text-center text-gray-600 dark:text-gray-300 mt-2">Follow these steps to set up the AI Player project</p>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Download Instructions</h1>
-            <p>Follow these steps to set up the AI Player project</p>
-        </section>
-
-        <section class="download-steps">
-            <div class="step-card">
-                <h2>1. Install Python3</h2>
-                <p>First, you'll need to install Python 3.x on your system:</p>
-                <ol>
-                    <li>Visit <a href="https://www.python.org/downloads/" target="_blank">Python Downloads</a></li>
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-4">1. Install Python3</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">First, you'll need to install Python 3.x on your system:</p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-4">
+                    <li>Visit <a href="https://www.python.org/downloads/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Python Downloads</a></li>
                     <li>Click "Download Python" (latest version)</li>
                     <li>Run the installer</li>
                     <li>Important: Check "Add Python to PATH" during installation</li>
                 </ol>
-                <div class="verification">
-                    <p>To verify the installation, open a terminal/command prompt and type:</p>
-                    <div class="code-block">
-                        <pre><code>python --version</code></pre>
+                <div class="mt-4">
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">To verify the installation, open a terminal/command prompt and type:</p>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+                        <pre class="text-sm"><code>python --version</code></pre>
                     </div>
                 </div>
             </div>
 
-            <div class="step-card">
-                <h2>2. Install PyQt6</h2>
-                <p>Install PyQt6 using pip3 (Python3's package manager):</p>
-                <ol>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-4">2. Install PyQt6</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Install PyQt6 using pip3 (Python3's package manager):</p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-4">
                     <li>Open a terminal/command prompt</li>
                     <li>Run the following command:</li>
-                    <div class="code-block">
-                        <pre><code>pip3 install PyQt6</code></pre>
-                    </div>
                 </ol>
-                <div class="verification">
-                    <p>To verify the installation:</p>
-                    <div class="code-block">
-                        <pre><code>python3 -c "import PyQt6; print(PyQt6.__version__)"</code></pre>
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 mb-4">
+                    <pre class="text-sm"><code>pip3 install PyQt6</code></pre>
+                </div>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">To verify the installation:</p>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+                        <pre class="text-sm"><code>python3 -c "import PyQt6; print(PyQt6.__version__)"</code></pre>
                     </div>
                 </div>
             </div>
 
-            <div class="step-card">
-                <h2>3. Install Ollama</h2>
-                <p>Install Ollama for local AI processing:</p>
-                <ol>
-                    <li>Visit <a href="https://ollama.com/download" target="_blank">Ollama Downloads</a></li>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-4">3. Install Ollama</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Install Ollama for local AI processing:</p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-4">
+                    <li>Visit <a href="https://ollama.com/download" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Ollama Downloads</a></li>
                     <li>Download the appropriate version for your operating system</li>
                     <li>Run the installer</li>
                     <li>Follow the installation prompts</li>
                 </ol>
-                <div class="verification">
-                    <p>To verify the installation, open a terminal and type:</p>
-                    <div class="code-block">
-                        <pre><code>ollama --version</code></pre>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">To verify the installation, open a terminal and type:</p>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+                        <pre class="text-sm"><code>ollama --version</code></pre>
                     </div>
                 </div>
             </div>
 
-            <div class="step-card">
-                <h2>4. Download Project Files</h2>
-                <p>Download the AI Player project files:</p>
-                <ol>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-4">4. Download Project Files</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Download the AI Player project files:</p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-4">
                     <li>Clone the repository or download the ZIP file</li>
                     <li>Extract the files to your desired location</li>
                     <li>Navigate to the project directory</li>
                 </ol>
-                <div class="verification">
-                    <p>Verify the project structure:</p>
-                    <div class="code-block">
-                        <pre><code>ls</code></pre>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Verify the project structure:</p>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 mb-4">
+                        <pre class="text-sm"><code>ls</code></pre>
                     </div>
-                    <p>You should see the following files:</p>
-                    <ul>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">You should see the following files:</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
                         <li>TextPlayer (executable)</li>
                         <li>Games folder (containing .z5 files)</li>
                         <li>Other project files</li>
@@ -98,28 +100,28 @@
             </div>
         </section>
 
-        <section class="troubleshooting">
-            <h2>Troubleshooting</h2>
-            <div class="troubleshooting-grid">
-                <div class="trouble-card">
-                    <h3>Python Issues</h3>
-                    <ul>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Troubleshooting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Python Issues</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>If 'python' command not found, try using 'python3'</li>
                         <li>Make sure Python is added to your system PATH</li>
                         <li>Try running pip with: python -m pip install PyQt6</li>
                     </ul>
                 </div>
-                <div class="trouble-card">
-                    <h3>PyQt6 Issues</h3>
-                    <ul>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">PyQt6 Issues</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>If installation fails, try updating pip first</li>
                         <li>On Windows, you might need Visual C++ Build Tools</li>
                         <li>Try installing with: pip install --upgrade PyQt6</li>
                     </ul>
                 </div>
-                <div class="trouble-card">
-                    <h3>Ollama Issues</h3>
-                    <ul>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Ollama Issues</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>Make sure you have sufficient disk space</li>
                         <li>Check if your system meets minimum requirements</li>
                         <li>Try running Ollama as administrator</li>
@@ -128,10 +130,10 @@
             </div>
         </section>
 
-        <section class="next-steps">
-            <h2>Next Steps</h2>
-            <p>Once you have completed the installation:</p>
-            <ol>
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4">Next Steps</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Once you have completed the installation:</p>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
                 <li>Open a terminal in the project directory</li>
                 <li>Run the TextPlayer executable</li>
                 <li>Select a game from the Games folder</li>
@@ -140,7 +142,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="text-center mt-12 py-4 text-gray-600 dark:text-gray-400">
         <p>&copy; 2025 Cardsea. All rights reserved.</p>
     </footer>
 </body>

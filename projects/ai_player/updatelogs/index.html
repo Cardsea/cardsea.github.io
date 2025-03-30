@@ -4,37 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Player Update Logs - Cardsea's Projects</title>
-    <link rel="stylesheet" href="../../../Resources/styles.css">
-    <script src="../../../Resources/script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav class="breadcrumb">
-            <ol>
-                <li><a href="../../../index.html">Home</a></li>
-                <li><a href="../../index.html">Projects</a></li>
-                <li><a href="../index.html">AI Player</a></li>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 shadow-md p-4">
+        <nav class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <ol class="flex space-x-2">
+                <li><a href="../../../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="../../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">AI Player</a></li>
+                <li class="text-gray-400">/</li>
                 <li>Update Logs</li>
             </ol>
         </nav>
-        <h1>AI Player Update Logs</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../../../index.html">Home</a></li>
-                <li><a href="../../index.html">Projects</a></li>
-                <li><a href="../index.html">AI Player</a></li>
-                <li><a href="https://github.com/Cardsea/ai_player" target="_blank" rel="noopener">GitHub <span class="external-link">↗</span></a></li>
+        <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">AI Player Update Logs</h1>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="../../../index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">Home</a></li>
+                <li><a href="../../index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">Projects</a></li>
+                <li><a href="../index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">AI Player</a></li>
+                <li><a href="https://github.com/Cardsea/ai_player" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">GitHub <span class="text-sm">↗</span></a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Update History</h2>
-        <div class="update-log">
-            <h3>Latest Updates</h3>
-            <p>Welcome to the AI Player update logs. This page will be updated with the latest changes and improvements to the project.</p>
-        </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Update History</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-4">Latest Updates</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">UI/UX Improvements</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Implemented modern dark theme with distinct color scheme</li>
+                            <li>Added color-coded text display for different message types</li>
+                            <li>Improved button and text field contrast</li>
+                            <li>Added proper spacing and margins</li>
+                            <li>Enhanced text readability with customizable font size</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">AI Integration</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Upgraded to JSON-formatted AI responses</li>
+                            <li>Added command cleaning for invalid patterns</li>
+                            <li>Improved context handling with role-based game history</li>
+                            <li>Added failure recovery and retry logic</li>
+                            <li>Enhanced room description tracking</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Technical Updates</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Switched from Tkinter to PyQt6 for better UI</li>
+                            <li>Added automatic Ollama server management</li>
+                            <li>Improved error handling and recovery</li>
+                            <li>Enhanced thread safety</li>
+                            <li>Added queue-based message handling</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Settings</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Added customizable AI thinking time</li>
+                            <li>Implemented game history size control</li>
+                            <li>Added text size adjustment</li>
+                            <li>Added AI model selection</li>
+                            <li>Added AI creativity level control</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Bug Fixes</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Fixed button color contrast issues</li>
+                            <li>Resolved text output formatting</li>
+                            <li>Fixed reset button functionality</li>
+                            <li>Improved error message handling</li>
+                            <li>Fixed Ollama server connection issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="mt-6 text-gray-600 dark:text-gray-300">The application now provides a more polished and reliable experience for playing text adventure games with AI assistance.</p>
+            </div>
+        </section>
     </main>
-    <footer>
+
+    <footer class="text-center mt-12 py-4 text-gray-600 dark:text-gray-400">
         <p>&copy; 2025 Cardsea. All rights reserved.</p>
     </footer>
 </body>

@@ -10,106 +10,75 @@
     <meta property="og:description" content="Basic object detection using OpenCV and Python.">
     <meta property="og:type" content="website">
     <title>ObjectTracking - Cardsea's Projects</title>
-    <link rel="stylesheet" href="../../Resources/styles.css">
-    <script src="../../Resources/script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav class="breadcrumb">
-            <ol>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../index.html">Projects</a></li>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 shadow-md p-4">
+        <nav class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <ol class="flex space-x-2">
+                <li><a href="../../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="../index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                <li class="text-gray-400">/</li>
                 <li>ObjectTracking</li>
             </ol>
         </nav>
-        <h1>ObjectTracking</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../index.html">Projects</a></li>
-                <li><a href="updatelogs">Update Logs</a></li>
-                <li><a href="https://github.com/Cardsea/ObjectTracking" target="_blank" rel="noopener">GitHub <span class="external-link">↗</span></a></li>
+        <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">ObjectTracking</h1>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="../../index.html" class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">Home</a></li>
+                <li><a href="../index.html" class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">Projects</a></li>
+                <li><a href="updatelogs" class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">Update Logs</a></li>
+                <li><a href="https://github.com/Cardsea/ObjectTracking" target="_blank" rel="noopener" class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">GitHub <span class="text-sm">↗</span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Basic Object Detection</h2>
-            <p class="tagline">A simple computer vision project that demonstrates basic object detection capabilities using OpenCV and Python.</p>
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">About ObjectTracking</h2>
+            <p class="text-gray-600 dark:text-gray-300">A simple computer vision project demonstrating basic object detection using OpenCV and Python. This project showcases real-time object tracking capabilities and provides a foundation for understanding computer vision concepts.</p>
         </section>
 
-        <section class="features">
-            <h2>Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>🎯 Core Features</h3>
-                    <ul>
-                        <li>Basic object detection</li>
-                        <li>Real-time camera feed</li>
-                        <li>Simple bounding box display</li>
-                        <li>Basic object classification</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>🔧 Technical Details</h3>
-                    <ul>
-                        <li>OpenCV integration</li>
-                        <li>Python-based implementation</li>
-                        <li>Webcam input support</li>
-                        <li>Basic image processing</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>📊 Interface</h3>
-                    <ul>
-                        <li>Live camera preview</li>
-                        <li>Simple UI controls</li>
-                        <li>Detection overlay</li>
-                        <li>Basic status display</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>⚙️ Settings</h3>
-                    <ul>
-                        <li>Detection threshold adjustment</li>
-                        <li>Camera resolution settings</li>
-                        <li>Basic display options</li>
-                        <li>Simple configuration</li>
-                    </ul>
-                </div>
-            </div>
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Features</h2>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>Real-time object detection and tracking</li>
+                <li>Support for multiple tracking algorithms</li>
+                <li>Simple and intuitive user interface</li>
+                <li>Performance optimization for smooth tracking</li>
+                <li>Customizable tracking parameters</li>
+            </ul>
         </section>
 
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <ol>
-                <li>Camera feed is captured in real-time</li>
-                <li>Each frame is processed using OpenCV</li>
-                <li>Basic object detection is performed</li>
-                <li>Results are displayed on screen</li>
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">How It Works</h2>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                <li>Capture video feed from webcam or video file</li>
+                <li>Process frames using OpenCV</li>
+                <li>Detect and track objects using selected algorithm</li>
+                <li>Display results in real-time</li>
+                <li>Allow user interaction for tracking control</li>
             </ol>
         </section>
 
-        <section class="requirements">
-            <h2>System Requirements</h2>
-            <ul>
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">System Requirements</h2>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                 <li>Python 3.x</li>
                 <li>OpenCV</li>
-                <li>Webcam</li>
-                <li>2GB RAM (minimum)</li>
+                <li>Webcam or Video Input Device</li>
+                <li>4GB RAM (minimum)</li>
+                <li>Modern CPU with SSE2 support</li>
             </ul>
-            <p class="download-note">Ready to try it out? Check out our <a href="download.html">detailed download instructions</a>.</p>
         </section>
 
-        <section class="summary">
-            <p>A straightforward implementation of computer vision basics, perfect for learning about object detection with OpenCV.</p>
+        <section class="text-center">
+            <p class="text-gray-600 dark:text-gray-300 text-lg">A practical introduction to computer vision and object tracking technologies.</p>
         </section>
     </main>
-    <footer>
+
+    <footer class="text-center mt-12 py-4 text-gray-600 dark:text-gray-400">
         <p>&copy; 2025 Cardsea. All rights reserved.</p>
     </footer>
 </body>
