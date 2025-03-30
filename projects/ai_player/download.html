@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Instructions - AI Player</title>
+    <link rel="stylesheet" href="../../Resources/styles.css">
+    <script src="../../Resources/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../index.html">Projects</a>
+            <a href="index.html">AI Player</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Download Instructions</h1>
+            <p>Follow these steps to set up the AI Player project</p>
+        </section>
+
+        <section class="download-steps">
+            <div class="step-card">
+                <h2>1. Install Python3</h2>
+                <p>First, you'll need to install Python 3.x on your system:</p>
+                <ol>
+                    <li>Visit <a href="https://www.python.org/downloads/" target="_blank">Python Downloads</a></li>
+                    <li>Click "Download Python" (latest version)</li>
+                    <li>Run the installer</li>
+                    <li>Important: Check "Add Python to PATH" during installation</li>
+                </ol>
+                <div class="verification">
+                    <p>To verify the installation, open a terminal/command prompt and type:</p>
+                    <div class="code-block">
+                        <pre><code>python --version</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h2>2. Install PyQt6</h2>
+                <p>Install PyQt6 using pip3 (Python3's package manager):</p>
+                <ol>
+                    <li>Open a terminal/command prompt</li>
+                    <li>Run the following command:</li>
+                    <div class="code-block">
+                        <pre><code>pip3 install PyQt6</code></pre>
+                    </div>
+                </ol>
+                <div class="verification">
+                    <p>To verify the installation:</p>
+                    <div class="code-block">
+                        <pre><code>python3 -c "import PyQt6; print(PyQt6.__version__)"</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h2>3. Install Ollama</h2>
+                <p>Install Ollama for local AI processing:</p>
+                <ol>
+                    <li>Visit <a href="https://ollama.com/download" target="_blank">Ollama Downloads</a></li>
+                    <li>Download the appropriate version for your operating system</li>
+                    <li>Run the installer</li>
+                    <li>Follow the installation prompts</li>
+                </ol>
+                <div class="verification">
+                    <p>To verify the installation, open a terminal and type:</p>
+                    <div class="code-block">
+                        <pre><code>ollama --version</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h2>4. Download Project Files</h2>
+                <p>Download the AI Player project files:</p>
+                <ol>
+                    <li>Clone the repository or download the ZIP file</li>
+                    <li>Extract the files to your desired location</li>
+                    <li>Navigate to the project directory</li>
+                </ol>
+                <div class="verification">
+                    <p>Verify the project structure:</p>
+                    <div class="code-block">
+                        <pre><code>ls</code></pre>
+                    </div>
+                    <p>You should see the following files:</p>
+                    <ul>
+                        <li>TextPlayer (executable)</li>
+                        <li>Games folder (containing .z5 files)</li>
+                        <li>Other project files</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <div class="troubleshooting-grid">
+                <div class="trouble-card">
+                    <h3>Python Issues</h3>
+                    <ul>
+                        <li>If 'python' command not found, try using 'python3'</li>
+                        <li>Make sure Python is added to your system PATH</li>
+                        <li>Try running pip with: python -m pip install PyQt6</li>
+                    </ul>
+                </div>
+                <div class="trouble-card">
+                    <h3>PyQt6 Issues</h3>
+                    <ul>
+                        <li>If installation fails, try updating pip first</li>
+                        <li>On Windows, you might need Visual C++ Build Tools</li>
+                        <li>Try installing with: pip install --upgrade PyQt6</li>
+                    </ul>
+                </div>
+                <div class="trouble-card">
+                    <h3>Ollama Issues</h3>
+                    <ul>
+                        <li>Make sure you have sufficient disk space</li>
+                        <li>Check if your system meets minimum requirements</li>
+                        <li>Try running Ollama as administrator</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <h2>Next Steps</h2>
+            <p>Once you have completed the installation:</p>
+            <ol>
+                <li>Open a terminal in the project directory</li>
+                <li>Run the TextPlayer executable</li>
+                <li>Select a game from the Games folder</li>
+                <li>Enjoy playing with AI assistance!</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cardsea. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

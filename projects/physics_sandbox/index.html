@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A dynamic physics simulation sandbox built with Python and Pygame, allowing users to create and interact with various physics objects in real-time.">
+    <meta name="keywords" content="physics simulation, pygame, python, sandbox game, interactive physics">
+    <meta name="author" content="Cardsea">
+    <title>Physics Sandbox Game - Interactive Physics Simulation</title>
+    <link rel="stylesheet" href="../../Resources/styles.css">
+    <style>
+        /* Additional dark mode styles specific to this page */
+        body.dark .feature-card {
+            background-color: #2d2d2d;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark .feature-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark .feature-card h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark .feature-card li {
+            color: #b0b0b0;
+        }
+
+        body.dark .how-it-works,
+        body.dark .requirements,
+        body.dark .summary {
+            background-color: #2d2d2d;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark .how-it-works li,
+        body.dark .requirements li {
+            color: #b0b0b0;
+        }
+
+        body.dark .summary p {
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="updatelogs.html">Update Logs</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="https://github.com/Cardsea/phisics-game.py" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+        <h1>Physics Sandbox Game</h1>
+        <p>A dynamic physics simulation sandbox built with Python and Pygame</p>
+    </header>
+
+    <main>
+        <section class="features">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Interactive Tools</h3>
+                    <ul>
+                        <li>Normal Ball: Standard physics behavior</li>
+                        <li>Bouncy Ball: Enhanced elasticity</li>
+                        <li>Heavy Ball: Increased mass</li>
+                        <li>Light Ball: Reduced mass</li>
+                        <li>Wall Tool: Create custom walls and structures</li>
+                        <li>Eraser Tool: Remove objects from the simulation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Physics Simulation</h3>
+                    <ul>
+                        <li>Realistic ball-to-ball collisions</li>
+                        <li>Wall collision detection and response</li>
+                        <li>Gravity and friction effects</li>
+                        <li>Elasticity and momentum conservation</li>
+                        <li>Anti-sticking mechanisms for smooth interactions</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>User Interface</h3>
+                    <ul>
+                        <li>Clean, intuitive tool menu</li>
+                        <li>Real-time FPS display</li>
+                        <li>Smooth wall drawing with point optimization</li>
+                        <li>Visual feedback for tool selection</li>
+                        <li>Drag-and-drop ball creation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Technical Features</h3>
+                    <ul>
+                        <li>Spatial partitioning for performance optimization</li>
+                        <li>Point optimization for wall creation</li>
+                        <li>Smooth wall drawing with distance-based sampling</li>
+                        <li>Configurable physics parameters</li>
+                        <li>Automatic package dependency management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Launch the game and select your desired tool from the menu</li>
+                <li>Use the left mouse button to create and interact with objects</li>
+                <li>Draw walls by clicking and dragging with the wall tool</li>
+                <li>Remove objects using the eraser tool</li>
+                <li>Watch as the physics engine calculates realistic interactions between objects</li>
+            </ol>
+        </section>
+
+        <section class="requirements">
+            <h2>System Requirements</h2>
+            <ul>
+                <li><a href="download.html#installation">Python 3.x</a></li>
+                <li><a href="download.html#installation">Pygame</a></li>
+                <li><a href="download.html#installation">NumPy</a></li>
+                <li><a href="download.html#controls">Mouse and keyboard for interaction</a></li>
+            </ul>
+        </section>
+
+        <section class="summary">
+            <h2>Project Summary</h2>
+            <p>The Physics Sandbox Game is an interactive physics simulation that allows users to experiment with various physics objects in real-time. Built with Python and Pygame, it features realistic physics calculations, intuitive controls, and a clean user interface. Users can create different types of balls, draw custom walls, and observe how objects interact with each other and the environment. The project is optimized for performance and includes features like spatial partitioning and point optimization for smooth gameplay.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Cardsea. All rights reserved.</p>
+    </footer>
+
+    <script src="../../Resources/script.js"></script>
+</body>
+</html> 

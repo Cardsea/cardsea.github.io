@@ -3,68 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardsea - Developer & Creator</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Welcome to Cardsea's portfolio - Exploring AI, iOS development, and innovative software projects.">
+    <meta name="keywords" content="developer portfolio, AI projects, iOS apps, software development">
+    <meta name="author" content="Cardsea">
+    <meta property="og:title" content="Cardsea - Developer Portfolio">
+    <meta property="og:description" content="Exploring the intersection of AI, mobile development, and creative coding.">
+    <meta property="og:type" content="website">
+    <title>Cardsea - Developer Portfolio</title>
+    <link rel="stylesheet" href="Resources/styles.css">
+    <script src="Resources/script.js" defer></script>
 </head>
-<body>
-    <header>
-        <h1>Cardsea</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/projects/ai_player/updatelogs">AI Player Updates</a></li>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <header class="bg-white dark:bg-gray-800 shadow-md p-4">
+        <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white hover:scale-105 transition-transform">Cardsea</h1>
+        <nav class="main-nav mt-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">Home</a></li>
+                <li><a href="projects/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">Projects</a></li>
+                <li><a href="https://github.com/Cardsea" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">GitHub <span class="text-sm">↗</span></a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="hero">
-            <h2>Welcome to my corner of the internet!</h2>
-            <p class="tagline">I'm a developer passionate about creating interesting projects and exploring new technologies.</p>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <section class="hero text-center mb-12">
+            <h1 class="welcome-message text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">Welcome!</h1>
+            <h2 class="text-2xl font-semibold mb-4">Welcome to my corner of the internet!</h2>
+            <p class="tagline text-gray-600 dark:text-gray-300">I'm a developer passionate about creating interesting projects and exploring new technologies.</p>
         </section>
 
-        <section class="about">
-            <h2>About Me</h2>
-            <p>I'm a developer who loves working on various projects, from AI-powered text game players to iOS applications. I enjoy exploring the intersection of technology and creativity, and I'm always excited to learn and experiment with new tools and frameworks.</p>
+        <section class="about bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p class="text-gray-600 dark:text-gray-300">I'm a developer who loves working on various projects, from AI-powered text game players to iOS applications. I enjoy exploring the intersection of technology and creativity, and I'm always excited to learn and experiment with new tools and frameworks.</p>
         </section>
 
         <section class="featured-projects">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>AI Player</h3>
-                    <p>An intelligent system for running text-based games in Frotz, making gaming more accessible and automated.</p>
-                    <div class="project-links">
-                        <a href="/projects/ai_player/updatelogs">View Updates</a>
+            <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">AI Frotz Player</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">An intelligent system for running text-based games in Frotz, watch the AI play through classic text adventures with real-time reasoning.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="projects/ai_player/updatelogs/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View Updates</a>
+                        <a href="projects/ai_player/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View Project</a>
+                        <a href="https://github.com/Cardsea/ai_player" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View on GitHub <span class="text-sm">↗</span></a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <h3>ObjectTracking</h3>
-                    <p>An innovative project exploring computer vision and object detection technologies.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Cardsea/ObjectTracking" target="_blank">View on GitHub</a>
+                </article>
+
+                <article class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">ObjectTracking</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">An innovative project exploring computer vision and object detection technologies.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="projects/ObjectTracking/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View Project</a>
+                        <a href="https://github.com/Cardsea/ObjectTracking" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View on GitHub <span class="text-sm">↗</span></a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <h3>Shake4Sound</h3>
-                    <p>A modern iOS app designed specifically for the iPhone 16 Pro, leveraging its unique capabilities.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Cardsea/shake4sound" target="_blank">View on GitHub</a>
+                </article>
+
+                <article class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">Shake4Sound</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A modern iOS app designed specifically for the iPhone 16 Pro, transforming motion into interactive sound experiences.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Cardsea/shake4sound" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">View on GitHub <span class="text-sm">↗</span></a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="connect">
-            <h2>Connect With Me</h2>
-            <div class="social-links">
-                <a href="https://github.com/Cardsea" target="_blank" class="social-link">GitHub</a>
-                <!-- Add more social links as needed -->
+        <section class="connect text-center mt-12">
+            <h2 class="text-2xl font-bold mb-4">Connect With Me</h2>
+            <div class="flex justify-center space-x-4">
+                <a href="https://github.com/Cardsea" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">GitHub <span class="text-sm">↗</span></a>
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Cardsea. All rights reserved.</p>
+
+    <footer class="text-center mt-12 py-4 text-gray-600 dark:text-gray-400">
+        <p>&copy; 2025 Cardsea. All rights reserved.</p>
     </footer>
 </body>
 </html> 

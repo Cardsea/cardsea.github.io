@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Instructions - ObjectTracking</title>
+    <link rel="stylesheet" href="../../Resources/styles.css">
+    <script src="../../Resources/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <ol>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="index.html">ObjectTracking</a></li>
+                <li>Download</li>
+            </ol>
+        </nav>
+        <h1>Download Instructions</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="index.html">ObjectTracking</a></li>
+                <li><a href="https://github.com/Cardsea/ObjectTracking" target="_blank" rel="noopener">GitHub <span class="external-link">↗</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Download Instructions</h2>
+            <p>Follow these steps to set up the ObjectTracking project</p>
+        </section>
+
+        <section class="download-steps">
+            <div class="step-card">
+                <h2>1. Install Python3</h2>
+                <p>First, you'll need to install Python 3.x on your system:</p>
+                <ol>
+                    <li>Visit <a href="https://www.python.org/downloads/" target="_blank">Python Downloads</a></li>
+                    <li>Click "Download Python" (latest version)</li>
+                    <li>Run the installer</li>
+                    <li>Important: Check "Add Python to PATH" during installation</li>
+                </ol>
+                <div class="verification">
+                    <p>To verify the installation, open a terminal/command prompt and type:</p>
+                    <div class="code-block">
+                        <pre><code>python --version</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h2>2. Install OpenCV</h2>
+                <p>Install OpenCV using pip3:</p>
+                <ol>
+                    <li>Open a terminal/command prompt</li>
+                    <li>Run the following command:</li>
+                    <div class="code-block">
+                        <pre><code>pip3 install opencv-python</code></pre>
+                    </div>
+                </ol>
+                <div class="verification">
+                    <p>To verify the installation:</p>
+                    <div class="code-block">
+                        <pre><code>python3 -c "import cv2; print(cv2.__version__)"</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h2>3. Install Additional Dependencies</h2>
+                <p>Install required packages:</p>
+                <ol>
+                    <li>Open a terminal in the project directory</li>
+                    <li>Run the following command:</li>
+                    <div class="code-block">
+                        <pre><code>pip3 install -r requirements.txt</code></pre>
+                    </div>
+                </ol>
+            </div>
+
+            <div class="step-card">
+                <h2>4. Download Project Files</h2>
+                <p>Download the ObjectTracking project files:</p>
+                <ol>
+                    <li>Clone the repository or download the ZIP file</li>
+                    <li>Extract the files to your desired location</li>
+                    <li>Navigate to the project directory</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="requirements">
+            <h2>System Requirements</h2>
+            <ul>
+                <li>Python 3.x</li>
+                <li>OpenCV</li>
+                <li>Webcam or Video Input Device</li>
+                <li>4GB RAM (minimum)</li>
+                <li>Modern CPU with SSE2 support</li>
+            </ul>
+        </section>
+
+        <section class="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <div class="troubleshooting-grid">
+                <div class="trouble-card">
+                    <h3>Camera Issues</h3>
+                    <ul>
+                        <li>Ensure camera permissions are enabled</li>
+                        <li>Check if other apps are using the camera</li>
+                        <li>Try different camera index numbers</li>
+                    </ul>
+                </div>
+                <div class="trouble-card">
+                    <h3>Performance Issues</h3>
+                    <ul>
+                        <li>Lower the resolution if tracking is slow</li>
+                        <li>Close other resource-intensive applications</li>
+                        <li>Update graphics drivers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cardsea. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
