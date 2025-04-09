@@ -5,6 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shake4Sound Update Logs - Cardsea's Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Toggle Switch Styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        /* Dark Mode Styles */
+        .dark input:checked + .slider {
+            background-color: #64B5F6;
+        }
+        /* Animation Speed Styles */
+        :root {
+            --transition-duration: 0.3s;
+        }
+        .transition-slow {
+            transition-duration: calc(var(--transition-duration) * 2);
+        }
+        .transition-normal {
+            transition-duration: var(--transition-duration);
+        }
+        .transition-fast {
+            transition-duration: calc(var(--transition-duration) * 0.5);
+        }
+        /* High Contrast Styles */
+        .high-contrast {
+            --text-color: #000000;
+            --bg-color: #ffffff;
+            --link-color: #0000EE;
+            --button-bg: #ffffff;
+            --button-border: #000000;
+            --button-text: #000000;
+            --button-hover-bg: #f0f0f0;
+        }
+        .high-contrast.dark {
+            --text-color: #ffffff;
+            --bg-color: #000000;
+            --link-color: #66b3ff;
+            --button-bg: #000000;
+            --button-border: #ffffff;
+            --button-text: #ffffff;
+            --button-hover-bg: #333333;
+        }
+        /* Color Scheme Styles */
+        .theme-blue {
+            --primary-color: #2196F3;
+            --primary-hover: #1976D2;
+        }
+        .theme-green {
+            --primary-color: #4CAF50;
+            --primary-hover: #388E3C;
+        }
+        .theme-purple {
+            --primary-color: #9C27B0;
+            --primary-hover: #7B1FA2;
+        }
+        /* Settings Panel Styles */
+        .settings-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .settings-panel.open {
+            right: 0;
+        }
+        .dark .settings-panel {
+            background: #1a1a1a;
+        }
+        .settings-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 999;
+        }
+        .settings-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Button and Link Styles */
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+        .link {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+        .link:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
     <header class="bg-white dark:bg-gray-800 shadow-md p-4">
@@ -19,7 +166,15 @@
                 <li>Update Logs</li>
             </ol>
         </nav>
-        <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">Shake4Sound Update Logs</h1>
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">Shake4Sound Update Logs</h1>
+            <button id="settingsButton" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+            </button>
+        </div>
         <nav class="mt-4">
             <ul class="flex justify-center space-x-6">
                 <li><a href="../../../index.html" class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">Home</a></li>
@@ -29,6 +184,76 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Settings Panel -->
+    <div id="settingsOverlay" class="settings-overlay"></div>
+    <div id="settingsPanel" class="settings-panel">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Settings</h2>
+                <button id="closeSettings" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Font Size -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Font Size</h3>
+                <div class="flex space-x-4">
+                    <button class="font-size-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-size="small">Small</button>
+                    <button class="font-size-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-size="medium">Medium</button>
+                    <button class="font-size-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-size="large">Large</button>
+                </div>
+            </div>
+
+            <!-- Animation Speed -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Animation Speed</h3>
+                <div class="flex space-x-4">
+                    <button class="speed-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-speed="slow">Slow</button>
+                    <button class="speed-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-speed="normal">Normal</button>
+                    <button class="speed-btn px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-speed="fast">Fast</button>
+                </div>
+            </div>
+
+            <!-- Color Scheme -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Color Scheme</h3>
+                <div class="flex space-x-4">
+                    <button class="theme-btn px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors" data-theme="blue">Blue</button>
+                    <button class="theme-btn px-4 py-2 rounded-lg bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-800 transition-colors" data-theme="green">Green</button>
+                    <button class="theme-btn px-4 py-2 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors" data-theme="purple">Purple</button>
+                </div>
+            </div>
+
+            <!-- Reduce Motion -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Reduce Motion</h3>
+                <label class="switch">
+                    <input type="checkbox" id="reduceMotion">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- High Contrast -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">High Contrast</h3>
+                <label class="switch">
+                    <input type="checkbox" id="highContrast">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex space-x-4">
+                <button id="resetSettings" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Reset to Default</button>
+                <button id="saveSettings" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
     <main class="max-w-6xl mx-auto px-4 py-8">
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Update History</h2>
@@ -38,8 +263,209 @@
             </div>
         </section>
     </main>
+
+    <!-- Floating Settings Button -->
+    <button id="floatingSettingsButton" class="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+    </button>
+
     <footer class="text-center mt-12 py-4 text-gray-600 dark:text-gray-400">
         <p>&copy; 2025 Cardsea. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Cookie management functions
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Default settings
+        const defaultSettings = {
+            fontSize: 'medium',
+            animationSpeed: 'normal',
+            colorScheme: 'blue',
+            reduceMotion: false,
+            highContrast: false
+        };
+
+        // Load settings from cookies
+        function loadSettings() {
+            const savedSettings = getCookie('userSettings');
+            if (savedSettings) {
+                try {
+                    return JSON.parse(savedSettings);
+                } catch (e) {
+                    console.error('Error parsing settings:', e);
+                    return defaultSettings;
+                }
+            }
+            return defaultSettings;
+        }
+
+        // Save settings to cookies
+        function saveSettings(settings) {
+            setCookie('userSettings', JSON.stringify(settings), 365);
+        }
+
+        // Apply settings to the page
+        function applySettings(settings) {
+            // Font size
+            document.body.classList.remove('text-sm', 'text-base', 'text-lg');
+            document.body.classList.add(`text-${settings.fontSize}`);
+
+            // Animation speed
+            document.documentElement.style.setProperty('--transition-duration', 
+                settings.animationSpeed === 'slow' ? '0.6s' :
+                settings.animationSpeed === 'fast' ? '0.15s' : '0.3s'
+            );
+
+            // Color scheme
+            document.body.classList.remove('theme-blue', 'theme-green', 'theme-purple');
+            document.body.classList.add(`theme-${settings.colorScheme}`);
+
+            // Reduce motion
+            if (settings.reduceMotion) {
+                document.body.classList.add('reduce-motion');
+            } else {
+                document.body.classList.remove('reduce-motion');
+            }
+
+            // High contrast
+            if (settings.highContrast) {
+                document.body.classList.add('high-contrast');
+            } else {
+                document.body.classList.remove('high-contrast');
+            }
+        }
+
+        // Update settings UI
+        function updateSettingsUI(settings) {
+            // Font size buttons
+            document.querySelectorAll('.font-size-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                if (btn.dataset.size === settings.fontSize) {
+                    btn.classList.add('bg-blue-600', 'text-white');
+                }
+            });
+
+            // Animation speed buttons
+            document.querySelectorAll('.speed-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                if (btn.dataset.speed === settings.animationSpeed) {
+                    btn.classList.add('bg-blue-600', 'text-white');
+                }
+            });
+
+            // Color scheme buttons
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                if (btn.dataset.theme === settings.colorScheme) {
+                    btn.classList.add('bg-blue-600', 'text-white');
+                }
+            });
+
+            // Toggles
+            document.getElementById('reduceMotion').checked = settings.reduceMotion;
+            document.getElementById('highContrast').checked = settings.highContrast;
+        }
+
+        // Settings panel functionality
+        const settingsPanel = document.getElementById('settingsPanel');
+        const settingsOverlay = document.getElementById('settingsOverlay');
+        const settingsButton = document.getElementById('settingsButton');
+        const floatingSettingsButton = document.getElementById('floatingSettingsButton');
+        const closeSettings = document.getElementById('closeSettings');
+        const saveSettingsButton = document.getElementById('saveSettings');
+        const resetSettingsButton = document.getElementById('resetSettings');
+
+        let currentSettings = loadSettings();
+
+        function openSettings() {
+            settingsPanel.classList.add('open');
+            settingsOverlay.classList.add('open');
+            updateSettingsUI(currentSettings);
+        }
+
+        function closeSettingsPanel() {
+            settingsPanel.classList.remove('open');
+            settingsOverlay.classList.remove('open');
+        }
+
+        // Event listeners
+        settingsButton.addEventListener('click', openSettings);
+        floatingSettingsButton.addEventListener('click', openSettings);
+        closeSettings.addEventListener('click', closeSettingsPanel);
+        settingsOverlay.addEventListener('click', closeSettingsPanel);
+
+        // Font size buttons
+        document.querySelectorAll('.font-size-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentSettings.fontSize = btn.dataset.size;
+                applySettings(currentSettings);
+            });
+        });
+
+        // Animation speed buttons
+        document.querySelectorAll('.speed-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentSettings.animationSpeed = btn.dataset.speed;
+                applySettings(currentSettings);
+            });
+        });
+
+        // Color scheme buttons
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentSettings.colorScheme = btn.dataset.theme;
+                applySettings(currentSettings);
+            });
+        });
+
+        // Toggle switches
+        document.getElementById('reduceMotion').addEventListener('change', (e) => {
+            currentSettings.reduceMotion = e.target.checked;
+            applySettings(currentSettings);
+        });
+
+        document.getElementById('highContrast').addEventListener('change', (e) => {
+            currentSettings.highContrast = e.target.checked;
+            applySettings(currentSettings);
+        });
+
+        // Save and reset buttons
+        saveSettingsButton.addEventListener('click', () => {
+            saveSettings(currentSettings);
+            closeSettingsPanel();
+        });
+
+        resetSettingsButton.addEventListener('click', () => {
+            currentSettings = {...defaultSettings};
+            applySettings(currentSettings);
+            updateSettingsUI(currentSettings);
+        });
+
+        // Apply settings on page load
+        applySettings(currentSettings);
+    </script>
 </body>
 </html> 
